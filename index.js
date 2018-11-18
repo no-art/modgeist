@@ -9,11 +9,11 @@ var express = require('express');
 var serveStatic = require('serve-static');
 var app = express();
 app.use(compression());
-app.use(serveStatic(__dirname));
+app.use(serveStatic(__dirname+"www"));
 var ff=__dirname;
 app.post('/upload', function(req, res) {
  var form = new formidable.IncomingForm();
-   form.uploadDir = (__dirname+'/upload');
+   form.uploadDir = (__dirname+'www/upload');
     form.on('file', function(field, file) {
             filename ='up'+ Date.now() + '-' + 'file.png';
             fs.rename(file.path,form.uploadDir + "/"+filename, function(err){

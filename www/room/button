@@ -1,0 +1,9 @@
+ <script>
+ reset();
+ logo(0);
+ document.getElementById("nexus1").style.visibility="visible";
+sendId("header","<xmp></push...></xmp>");
+//stopPushButton2('b2');
+//pushButton2('b2');
+
+</script>

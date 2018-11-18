@@ -1,0 +1,9 @@
+<script>
+reset();
+logo(0);
+document.getElementById("messages").style.visibility="visible";
+document.getElementById("chat").style.visibility="visible";
+document.getElementById("display").style.visibility="hidden";
+sendId("header","<xmp></tchat></xmp>");
+</script>
+<img src="img/modgeist.png"  style="width:100%;position:absolute;left:0%" "></img>

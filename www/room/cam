@@ -1,0 +1,75 @@
+
+<button class="switch">On / Off</button>
+<script>
+ /* const constraints = {
+  advanced:[{torch: true}]
+};*/
+
+
+const SUPPORTS_MEDIA_DEVICES = 'mediaDevices' in navigator;
+
+if (SUPPORTS_MEDIA_DEVICES) {
+  navigator.mediaDevices.enumerateDevices().then(devices => {
+  
+    const cameras = devices.filter((device) => device.kind === 'videoinput');
+
+    if (cameras.length === 0) {
+      throw 'No camera found on this device.';
+    }
+    const camera = cameras[cameras.length - 1];
+
+    // Create stream and get video track
+    navigator.mediaDevices.getUserMedia({
+      video: true /* {
+       deviceId: camera.deviceId,
+        facingMode: ['user', 'environment'],
+        height: {ideal: 1080},
+        width: {ideal: 1920}
+      }*/
+    }).then(stream => {
+      const track = stream.getVideoTracks()[0];
+
+      //Create image capture object and get camera capabilities
+      const imageCapture = new ImageCapture(track)
+      const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
+
+        //todo: check if camera has a torch
+
+        //let there be light!
+        const btn = document.querySelector('.switch');
+        btn.addEventListener('click', function(){
+        //if (ttruc==false) {ttruc=true}
+        //else {ttruc=false}
+          track.applyConstraints({
+            advanced: [{torch: true}]
+          });
+        });
+      });
+    });
+  });
+}
+/*
+const constraints = {
+  width: {min: 640, ideal: 1280},
+  height: {min: 480, ideal: 720},
+  advanced: [
+    {width: 1920, height: 1280},
+    {aspectRatio: 1.333}
+  ]
+};
+
+navigator.mediaDevices.getUserMedia({ video: true })
+.then(mediaStream => {
+  const track = mediaStream.getVideoTracks()[0];
+  track.applyConstraints(constraints)
+  .then(() => {
+    // Do something with the track such as using the Image Capture API.
+  }
+  .catch(e => {
+    // The constraints could not be satisfied by the available devices.
+  }
+}
+*/
+
+
+</script>

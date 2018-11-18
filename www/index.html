@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset='utf-8' />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>Narcissus _Reflected</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="lib/jqueryProgress.min.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/upload.css">-->
+
+	<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+	<script src="https://pubnub.a.ssl.fastly.net/pubnub.min.js"></script>
+	 <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.6.js"></script>
+	 <script src="https://messaging-public.realtime.co/js/2.1.0/ortc.js"></script>
+
+	 <script type="text/javascript" src="lib/delivery.js"></script>
+		<script type="text/javascript" src="lib/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/jqueryProgress.min.js"></script>
+		<script type="text/javascript" src="lib/screenfull.js"></script>
+		<script type="text/javascript" src="lib/NoSleep.js"></script>
+		<script type="text/javascript" src="lib/parallax.min.js"></script>
+		
+		<script type="text/javascript" src="lib/add.js"></script>
+		<script type="text/javascript" src="lib/myFunctions.js"></script>	
+		<script type="text/javascript" src="lib/canvasFunct.js"></script>	
+	 	<script type="text/javascript" src="lib/cookies.js"></script>
+	 	<script type="text/javascript" src="lib/shake.js"></script>
+	 	<script type="text/javascript" src="lib/jquery.mobile.custom.min.js"></script>
+	 	<script type="text/javascript" src="lib/img_resize.js"></script>
+</head>
+
+<body onclick="fbody()" onload="bodyload()">
+	<div id="main"></div>
+	<div id="header"></div>
+	
+	<div id="middle">
+		<div id="messages"></div>
+		<div id="display" class="entier" ></div>
+			<div id="logo" style="position:absolute;left:0px;top:20%;height:100%;width:100%;margin:0px;pointer-events:none;z-index:-100;">
+			</div>
+
+			<div id="nexus1" style="visibility:hidden">
+				<div id="db2" style="position:absolute;left:0px;top:0px;width:100%;height:100%;margin:0px">	
+					<canvas style="width: 100%; height: 100%" id="b2" ></canvas>
+				</div> 
+			</div>
+			<div id="nexus2" style="visibility:hidden" >
+				<div id="pos" style="position:absolute;left:0px;top:0px;width:100%;height:100%;margin:0px">	
+				<canvas   style="width:100%;height:100%;background-color:lightgray;" id="cpos" X=0 Y=0></canvas>
+				</div>
+			</div>		
+			<div id="nexus3" style="visibility:hidden" >
+				<div id="light" style="position:absolute;left:0px;top:0px;width:100%;height:100%;margin:0px">	
+					<div id="light1" class="lgt2"><canvas nx="button" style="width:90%;height:90%" id="b10" ></canvas></div>
+					<div id="light2" class="lgt"><canvas nx="button" style="width:90%;height:90%" id="b11" ></canvas></div>
+
+					<div id="light3" class="lgt2"><canvas nx="button" style="width:90%;height:90%" id="b12" ></canvas></div>
+					<div id="light4" class="lgt"><canvas nx="button" style="width:90%;height:90%" id="b13" ></canvas></div>
+
+					<div id="light5" class="lgt2"><canvas nx="button" style="width:90%;height:90%" id="b14" ></canvas></div>
+					<div id="light6" class="lgt"><canvas nx="button" style="width:90%;height:90%" id="b15" ></canvas></div>
+				</div>
+			</div>
+		</div>		
+		<div id="chat">
+			<form action="javascript:none()" onsubmit="return (envoiMessage());">
+		    	<b>Message : </b>
+		    	<input type="text" name="message" id="chat-msg" autocomplete="on" /> <input  type="submit" value="Envoyer"/>
+		  	</form>
+ 
+
+		</div>
+		
+	
+
+	<div id="footer">
+			<h3>swipe me</h3>
+	</div>
+	<div id="popup" onclick="togglePopup()"></div> 
+	<div id="popup2"onclick="togglePopup()"></div>
+</body>
+				<script type="text/javascript" src="lib/soundtrig.js"></script>
+				<script type="text/javascript" src="lib/_room.js"></script>
+<script>
+//	noSleep.enable();
+	var draw=false;
+	var _tick=50;
+	var room=['rSpot','rUpload2','rChat','button','shaker','rBgLight','rBgBlack','simple'];	
+	function tick(i){
+	i=Math.max(i, 80);
+	_tick=i;
+	}
+$(function(){
+  $( "#footer" ).on( "swipeleft", swipeleftHandler );
+  $( "#footer" ).on( "swiperight", swiperightHandler );
+ 	function swiperightHandler(event){
+ 		 reset();
+ 		changeRoom(1);
+ 	}
+  function swipeleftHandler( event ){
+  	 reset();
+   changeRoom(0);
+  }
+});
+	function bodyload(){;}
+	startMouseT('cpos');
+	//toggleButton('b2','red','green');
+	toggleButton('b2',"#444","#ACACAC");
+	//pushButton('b10');
+	//pushButton('b11');
+	//pushButton('b12');
+	//pushButton('b13');
+	//pushButton('b14');
+	//pushButton('b15');
+	attrib('cpos');
+	start('cpos');
+	joinRoom('cam');
+
+</script>
+
+</html>

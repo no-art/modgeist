@@ -1,0 +1,42 @@
+   <style> 
+    #like{
+    display: inline-block;
+    border-radius: 30px;
+    background: #73AD21;
+    background-image: url("../img/like.png");
+	background-size:contain;
+    background-repeat: no-repeat;
+	background-color:#FAD0C1;
+    border: 2px solid #FFFFFF;
+
+}
+@media (orientation:portrait){
+#like{
+	width:75vw;
+	height:75vw;
+	}
+}
+@media (orientation:landscape){
+#like{
+	width:75vh;
+	height:75vh;
+	}
+}
+</style>
+<script>
+		reset();
+		logo(0);
+		sendId("header","Achève moi");
+		var player=0;
+
+		var vote=1;
+		vote=vote.toString();
+		//var like= new Audio('../sound/envoi.wav');
+
+		var player=0;
+		
+
+ 
+    </script>
+			<div  id="like" onclick="like()" ></div>
+			<audio id="audioLike"><source src="../sound/envoi.wav" type="audio/mpeg"></audio>

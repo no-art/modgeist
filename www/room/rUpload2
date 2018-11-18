@@ -1,0 +1,76 @@
+<style>
+#image-upload{
+	position:relative;
+	background-image: url("img/pictocamera.png");
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center; 
+	/*display: flex;
+	-webkit-flex-direction: column;
+	-webkit-justify-content: center;*/
+	width:100%;
+	height:100%;
+}	
+@media (orientation:landscape){
+	#camPicto{
+	/*position : relative;*/
+	width:50vh;
+	}
+}
+@media (orientation:portrait){
+	#camPicto{
+	/*position : relative;*/
+	width:50vw;
+	}
+}
+	.image-upload > input{
+		display: none;
+	}
+</style> 
+<style>
+#display {	
+	background-color:black;
+	
+}
+</style>         
+<div id="image-upload" onclick="document.getElementById('file-input').click();">
+	<input id="file-input" type="file" style="display: none;"/>
+</div>
+<script>
+	sendId("header","<xmp></photo></xmp>");
+	reset();
+
+	var isDownloaded=false;	
+	function clearFileInput(ctrl) {
+	  try {
+		ctrl.value = null;
+	  } catch(ex) { }
+	  if (ctrl.value) {
+		ctrl.parentNode.replaceChild(ctrl.cloneNode(true), ctrl);
+	  }
+	}
+	delivery.on('delivery.connect',function(delivery){
+	
+			$("#file-input").change(function(evt){		
+			var file = $("input[type=file]")[0].files[0];		
+			if (typeof file!="undefined"  ){
+			var endFile=file.name.split(".");
+				var end=endFile[endFile.length - 1];	
+
+					if (end=="jpg" ||end=="jpeg" || end=="png" || end=="JPG" || end=="JPEG" )  {
+				document.getElementById("image-upload").style.backgroundImage ="URL('img/loader3.gif')";
+				delivery.send(file);
+				clearFileInput(document.getElementById("file-input"));
+				evt.preventDefault();
+				}
+				else{sendId("image-upload","please send only photo");
+				clearFileInput(document.getElementById("file-input"));}
+			}
+		});
+		delivery.on('send.success',function(fileUID){
+		clearFileInput(document.getElementById("file-input"));
+		sendId("image-upload","thanx!");
+	});	
+	});
+			
+</script> 

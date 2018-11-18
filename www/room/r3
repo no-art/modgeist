@@ -1,0 +1,8 @@
+<script>
+reset();
+document.getElementById("nexus2").style.visibility="visible";
+opacity("nexus2",1);
+sendId("header","<xmp></control></xmp>")
+
+</script>
+ 

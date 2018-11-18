@@ -1,0 +1,94 @@
+ <script>
+sendId("header","<xmp></master1></xmp>");
+var seq;
+function sequence(r){
+	seq=r;
+	getId("sel").style.visibility='visible';
+	sendId("sel", 'confirme '+r+' ?');
+}
+function sequence2(r){
+  socket.emit("send",['/sequences',r]);
+}
+function confirme(){
+	getId("sel").style.visibility='hidden';
+	socket.emit("send",['/sequences',seq]);
+}
+</script>
+<style>
+.gallery{
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+button  {
+  //flex: 2 0 50%;
+  margin: 0px;
+  	border-radius: 4px;
+  border: 2px solid;
+  //display: block;
+  //height: 30px;
+  width: 50%;
+     font-size: 3.5vh;
+
+}
+#ggal{
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+#gg{
+  padding-top:10vh;
+}
+#sel{
+width:80%;
+  background-color:red;
+  visibility:hidden;
+
+}
+
+.gallery {
+border:2px solid;
+//position:absolute;
+ width: 100%;
+ height: 60%;
+}
+button {
+  width: 40%;
+}
+}
+@media (orientation:portrait){
+	button,.gallery div  {
+  //width: 30vh;
+}
+
+}
+@media (orientation:landscape){
+	button,.gallery div  {
+  //width: 30vw;
+	}
+}
+
+</style>
+
+</br>
+<div id="ggal">
+<div class="gallery">
+<button onclick="sequence('pre-basique')">basique</button>
+<button onclick="sequence('paresse')">apathie</button>
+<button onclick="sequence('gourmandise')">gourmandise</button>
+<button onclick="sequence('luxure')">luxure</button>
+<button onclick="sequence('envie')">envie</button>
+<button onclick="sequence('avarice')">avarice</button>
+<button onclick="sequence('orgueil')">orgueil</button>
+<button onclick="sequence('colere')">colere</button>
+<button onclick="sequence('vanite')">vanite</button>
+<button onclick="sequence('final')">final</button>
+<button onclick="sequence('vote1')">vote 1</button>
+<button onclick="sequence2('paresse1')">paresse1</button>
+<button onclick="sequence2('paresse2')">paresse2</button>
+<button onclick="sequence2('paresse3')">paresse3</button>
+</div>
+<div id="gg">
+<button id="sel" onclick="confirme()">confirm?</button>
+</div></div>

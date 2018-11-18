@@ -1,0 +1,5 @@
+ <script>
+ //logo(0);
+ document.getElementById("nexus3").style.visibility="visible";
+sendId("header","<xmp></...></xmp>");
+</script>

@@ -1,0 +1,98 @@
+<div classe="entier"  >
+	<img src="img/3.png" width="10%" id="img0"><img src="img/3.png" width="10%" id="img2"><img src="img/3.png" width="10%" id="img4"><img src="img/3.png" width="10%" id="img5"><img src="img/3.png" width="10%" id="img6"><img src="img/3.png" width="10%" id="img7"><img src="img/3.png" width="10%" id="img8">
+	<img src="img/3.png" width="10%" id="img11">
+	<img src="img/3.png" width="10%" id="img16"><img src="img/3.png" width="10%" id="img17"><img src="img/3.png" width="10%" id="img18">
+	<img src="img/3.png" width="10%" id="img19"><img src="img/3.png" width="10%" id="img20"><img src="img/3.png" width="10%" id="img22"><img src="img/3.png" width="10%" id="img23">
+	<img src="img/3.png" width="10%" id="img25"><img src="img/3.png" width="10%" id="img26"><img src="img/3.png" width="10%" id="img27">
+	<img src="img/3.png" width="10%" id="img28"><img src="img/3.png" width="10%" id="img29"><img src="img/3.png" width="10%" id="img21">
+	<img src="img/3.png" width="10%" id="img13"><img src="img/3.png" width="10%" id="img14"><img src="img/3.png" width="10%" id="img15">
+</div>
+<script>
+reset();
+document.getElementById("nexus2").style.visibility="visible";
+document.getElementById("cpos").style.backgroundColor="transparent";
+opacity("nexus2",0.7);
+draw=true;
+logo(1);
+sendId("header","<xmp></paysages></xmp>");
+//stopMouseT2('cpos');
+//console.log(_tick);
+//stopMouseT2('cpos');
+//startMouseT2('cpos');
+
+//delete(spot1);
+</script>
+	<script>
+document.getElementById("img29").style.left="67.0846%";
+document.getElementById("img29").style.top="45.8432%";
+document.getElementById("img29").style.position="absolute"
+document.getElementById("img28").style.left="75.5486%";
+document.getElementById("img28").style.top="51.5439%";
+document.getElementById("img28").style.position="absolute"
+document.getElementById("img27").style.left="79.4671%";
+document.getElementById("img27").style.top="35.1544%";
+document.getElementById("img27").style.position="absolute"
+document.getElementById("img26").style.left="66.3009%";
+document.getElementById("img26").style.top="61.2827%";
+document.getElementById("img26").style.position="absolute"
+document.getElementById("img25").style.left="61.2853%";
+document.getElementById("img25").style.top="57.2447%";
+document.getElementById("img25").style.position="absolute"
+document.getElementById("img23").style.left="56.8965%";
+document.getElementById("img23").style.top="27.0784%";
+document.getElementById("img23").style.position="absolute"
+document.getElementById("img22").style.left="83.6991%";
+document.getElementById("img22").style.top="22.0903%";
+document.getElementById("img22").style.position="absolute"
+document.getElementById("img20").style.left="59.5611%";
+document.getElementById("img20").style.top="10.6888%";
+document.getElementById("img20").style.position="absolute"
+document.getElementById("img19").style.left="72.884%";
+document.getElementById("img19").style.top="71.734%";
+document.getElementById("img19").style.position="absolute"
+document.getElementById("img18").style.left="70.8464%";
+document.getElementById("img18").style.top="64.8456%";
+document.getElementById("img18").style.position="absolute"
+document.getElementById("img17").style.left="78.8401%";
+document.getElementById("img17").style.top="21.3777%";
+document.getElementById("img17").style.position="absolute"
+document.getElementById("img16").style.left="62.6959%";
+document.getElementById("img16").style.top="82.4228%";
+document.getElementById("img16").style.position="absolute"
+document.getElementById("img11").style.left="10.815%";
+document.getElementById("img11").style.top="81.7102%";
+document.getElementById("img11").style.position="absolute"
+document.getElementById("img8").style.left="40.7523%";
+document.getElementById("img8").style.top="10.2138%";
+document.getElementById("img8").style.position="absolute"
+document.getElementById("img7").style.left="48.5893%";
+document.getElementById("img7").style.top="7.83848%";
+document.getElementById("img7").style.position="absolute"
+document.getElementById("img5").style.left="21.9436%";
+document.getElementById("img5").style.top="61.9953%";
+document.getElementById("img5").style.position="absolute"
+document.getElementById("img4").style.left="23.9812%";
+document.getElementById("img4").style.top="54.3943%";
+document.getElementById("img4").style.position="absolute"
+document.getElementById("img0").style.left="30.8777%";
+document.getElementById("img0").style.top="86.2233%";
+document.getElementById("img0").style.position="absolute"
+document.getElementById("img2").style.left="19.5925%";
+document.getElementById("img2").style.top="88.5986%";
+document.getElementById("img2").style.position="absolute"
+document.getElementById("img21").style.left="75.0784%";
+document.getElementById("img21").style.top="84.323%";
+document.getElementById("img21").style.position="absolute"
+document.getElementById("img14").style.left="25.5486%";
+document.getElementById("img14").style.top="25.6532%";
+document.getElementById("img14").style.position="absolute"
+document.getElementById("img6").style.left="39.185%";
+document.getElementById("img6").style.top="34.6793%";
+document.getElementById("img6").style.position="absolute"
+document.getElementById("img15").style.left="16.9279%";
+document.getElementById("img15").style.top="25.1781%";
+document.getElementById("img15").style.position="absolute"
+document.getElementById("img13").style.left="19.906%";
+document.getElementById("img13").style.top="36.5796%";
+document.getElementById("img13").style.position="absolute"
+</script>

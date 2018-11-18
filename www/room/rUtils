@@ -1,0 +1,75 @@
+ <script>
+sendId("header","<xmp></master1></xmp>");
+
+</script>
+<style>
+.gallery{
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+button  {
+  //flex: 2 0 50%;
+  margin: 0px;
+  	border-radius: 4px;
+  border: 2px solid;
+  //display: block;
+  //height: 30px;
+  width: 50%;
+     font-size: 3.5vh;
+
+}
+#ggal{
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+#gg{
+  padding-top:10vh;
+}
+#sel{
+width:80%;
+  background-color:red;
+  visibility:hidden;
+
+}
+
+.gallery {
+border:2px solid;
+//position:absolute;
+ width: 100%;
+ height: 60%;
+}
+button {
+  width: 40%;
+}
+}
+@media (orientation:portrait){
+	button,.gallery div  {
+  //width: 30vh;
+}
+
+}
+@media (orientation:landscape){
+	button,.gallery div  {
+  //width: 30vw;
+	}
+}
+
+</style>
+
+</br>
+<div id="ggal">
+<div class="gallery">
+<button onclick="sequence('map_on')">map on</button>
+<button onclick="sequence('map_off')">map off</button>
+<button onclick="sequence('save_map')">save map</button>
+<button onclick="sequence('screen_mode_2')">screen mode 2</button>
+<button onclick="sequence('reset_all')">reset all</button>
+<button onclick="sequence('reset_cam')">reset smartphones</button>
+<button onclick="sequence('kill_app')">kill app</button>
+</div>
+<div id="gg">
+<button id="sel" onclick="confirme()">confirm?</button>
+</div></div>

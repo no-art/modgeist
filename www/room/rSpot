@@ -1,0 +1,30 @@
+<style>
+#header{
+border:0px;
+}
+
+body{
+    background:black;
+}
+#main {
+	position: absolute;
+	z-index:1;
+    width: 100%;
+    height: 100%;
+    //background:black;
+}
+
+</style>
+//<script>
+reset();
+document.getElementById("nexus2").style.visibility="visible";
+document.getElementById("cpos").style.backgroundColor="lightgray";
+opacity("nexus2",1);
+//opacity("footer",0);
+draw=true;
+sendId("main","");
+sendId("header","Spots")
+//_tick=1000;
+//stopMouseT2('cpos');
+//startMouseT2('cpos');
+</script>

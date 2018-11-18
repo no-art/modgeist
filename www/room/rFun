@@ -1,0 +1,11 @@
+<img src="img/4.GIF" width="100%" id="img1" style="opacity:0">
+<script>
+reset();
+logo(1);
+</script>
+<script>
+sendId("header","<xmp></fun></xmp>");
+ $( "#img1" ).animate({
+    opacity: 1,
+  }, 1500 );
+  </script>

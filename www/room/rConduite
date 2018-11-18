@@ -1,0 +1,11 @@
+
+<strong>normalement :</strong> debut : sur la chaise après habillage, fin=vote</br>
+<strong>avarice :</strong> fin : compter 25 après qu'ils soient partis</br>
+<strong>colere : </strong> fin : lancer <strong>black</strong> lors du depart de l'autre, puis attendre 10 sec après depart</br>
+<strong>envie : </strong> rien</br>
+<strong>gourmandise : </strong> black a envoyer</br>
+<strong>luxure : </strong> compter 25 sec apres qu'ils soient partis</br>
+<strong>orgueil :</strong> debut : lancer sequence apres que les spectateurs soient placés + danseur habillés</br>
+<strong>paresse :</strong> fin : <strong>black</strong> après la croix</br>
+<strong>vote final : </strong>black si lumière pas enclanchée.</br>
+<strong>final : </strong> debut :attendre qu'ils soient habillés <strong>black</strong>: pour changer entre applause et public </br>

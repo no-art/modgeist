@@ -1,0 +1,84 @@
+		<style type="text/css">
+			#box
+			{
+				width: 300px;
+				height: 300px;
+			}
+
+						#carbonads { 
+			    max-width: 300px; 
+			    background: #f8f8f8;
+			}
+
+			.carbon-text { 
+			    display: block; 
+			    width: 130px; 
+			}
+
+			.carbon-poweredby { 
+			    float: right; 
+			}
+			.carbon-text {
+			    padding: 8px 0; 
+			}
+
+			#carbonads { 
+			    padding: 15px;
+			    border: 1px solid #ccc; 
+			}
+
+			.carbon-text {
+			    font-size: 12px;
+			    color: #333333;
+			    text-decoration: none;
+			}
+
+
+			.carbon-poweredby {
+			    font-size: 75%;
+			    text-decoration: none;
+			}
+
+			#carbonads { 
+			    position: fixed; 
+			    top: 5px;
+			    right: 5px;
+			}
+		</style>
+		<script type="text/javascript" src="lib/shake.js"></script>
+		<script type="text/javascript">
+			function getRandomInt(min, max) {
+			  return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+			var shakeEvent = new Shake({threshold: 0.1});
+			shakeEvent.start();
+			window.addEventListener('shake', function(){
+				socket.emit('nx','1');
+				var element = document.getElementById("box");
+			    var r = getRandomInt(0, 255);
+			    var g = getRandomInt(0, 255);
+			    var b = getRandomInt(0, 255);
+
+			    element.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+				
+			}, false);
+
+			//stop listening
+			function stopShake(){
+				shakeEvent.stop();
+			}
+
+			if(!("ondevicemotion" in window)){alert("Not Supported");}
+		</script>
+	
+	
+		Shake to change color of the box
+		<div id="box"></div>
+		<script type="text/javascript">
+			var element = document.getElementById("box");
+			var r = getRandomInt(0, 255);
+			var g = getRandomInt(0, 255);
+			var b = getRandomInt(0, 255);
+		    element.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+		</script>

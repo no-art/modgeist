@@ -9,7 +9,7 @@ var express = require('express');
 var serveStatic = require('serve-static');
 var app = express();
 app.use(compression());
-app.use(serveStatic(__dirname+"www"));
+app.use(serveStatic(__dirname+"/www"));
 var ff=__dirname;
 app.post('/upload', function(req, res) {
  var form = new formidable.IncomingForm();

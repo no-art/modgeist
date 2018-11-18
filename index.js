@@ -3,7 +3,7 @@
 
 var fs  = require('fs');
 var formidable = require('formidable');
-var x=0;
+var x=1;
 var compression=require('compression');
 var express = require('express');
 var serveStatic = require('serve-static');

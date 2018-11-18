@@ -23,6 +23,6 @@ app.post('/upload', function(req, res) {
             });
         });
    form.parse(req, function(err, fields, files) {
-});
+  });
  });
 var server=app.listen(3000);

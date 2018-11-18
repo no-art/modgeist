@@ -16,13 +16,13 @@ app.post('/upload', function(req, res) {
    form.uploadDir = (__dirname+'/upload');
     form.on('file', function(field, file) {
             filename ='up'+ Date.now() + '-' + 'file.png';
-                fs.rename(file.path,form.uploadDir + "/"+filename, function(err){
-                  if(err){
-        console.log('File could not be saved.');
-         }else{       
-      };
-     });
+            fs.rename(file.path,form.uploadDir + "/"+filename, function(err){
+              if(err){
+                console.log('File could not be saved.');
+              }else{};
+            });
         });
    form.parse(req, function(err, fields, files) {
 });
+ });
 var server=app.listen(3000);

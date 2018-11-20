@@ -170,19 +170,20 @@ function chat(m){
 }
 */
 function fbody(){
-/*	screenfull.request();
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+//	screenfull.request();
+
+	
+	if (!screenfull.enabled) {
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	screenfull.request();
 	noSleep.enable();
  // some code..
 }
-	
-	if (!screenfull.enabled) {
-		screenfull.request();
-		noSleep.enable();
+	//	screenfull.request();
+	//	noSleep.enable();
 	}
 	
-*/
+
 }
 ////////common functions
 function sendDate(id){

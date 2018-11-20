@@ -173,7 +173,7 @@ function fbody(){
 //	screenfull.request();
 
 	
-	if (!screenfull.enabled) {
+	//if (!screenfull.enabled) {
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	screenfull.request();
 	noSleep.enable();
@@ -181,7 +181,7 @@ function fbody(){
 }
 	//	screenfull.request();
 	//	noSleep.enable();
-	}
+//	}
 	
 
 }

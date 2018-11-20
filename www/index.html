@@ -14,8 +14,8 @@
 	<!--<link rel="stylesheet" type="text/css" href="css/upload.css">-->
 
 	<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
-	<script src="https://pubnub.a.ssl.fastly.net/pubnub.min.js"></script>
-	 <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.6.js"></script>
+		<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+		<script src="lib/webrtc.js"></script>
 	 <script src="https://messaging-public.realtime.co/js/2.1.0/ortc.js"></script>
 
 	 <script type="text/javascript" src="lib/delivery.js"></script>
@@ -36,9 +36,16 @@
 
 <body onclick="fbody()" onload="bodyload()">
 	<div id="main"></div>
+		<div id="video-rec" style="">
+			</div>
 	<div id="header"></div>
 	
 	<div id="middle">
+	
+		<div id="video-rec2" style="visibility:hidden;position:absolute;left:0px;top:0px;width:0%;height:0%;margin:0px"></div>
+				<script src="lib/rtc-controller.js"></script>
+
+<script type="text/javascript" src="lib/vidhelper.js"></script>
 		<div id="messages"></div>
 		<div id="display" class="entier" ></div>
 			<div id="logo" style="position:absolute;left:0px;top:20%;height:100%;width:100%;margin:0px;pointer-events:none;z-index:-100;">
@@ -90,7 +97,7 @@
 //	noSleep.enable();
 	var draw=false;
 	var _tick=50;
-	var room=['rSpot','rUpresize','rChat','button','shaker','rBgLight','rBgBlack','simple'];	
+	var room=['rSpot','rUpload2','rChat','button','shaker','rBgLight','rBgBlack','simple','rVideo'];	
 	function tick(i){
 	i=Math.max(i, 80);
 	_tick=i;
@@ -109,17 +116,12 @@ $(function(){
 });
 	function bodyload(){;}
 	startMouseT('cpos');
-	//toggleButton('b2','red','green');
 	toggleButton('b2',"#444","#ACACAC");
-	//pushButton('b10');
-	//pushButton('b11');
-	//pushButton('b12');
-	//pushButton('b13');
-	//pushButton('b14');
-	//pushButton('b15');
 	attrib('cpos');
 	start('cpos');
-	joinRoom('cam');
+		vidlogin(r_uuid);
+	//joinRoom('simple');
+
 
 </script>
 

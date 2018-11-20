@@ -7,6 +7,7 @@ var roomInt=-1;
 var pubnub;
 var p_uuid;
 var socket;
+var streamOk=false;
 var _room='init';
 function guid() {
   function s4() {
@@ -35,7 +36,9 @@ socket = RealtimeMessaging.createClient();
   	socket.subscribe('receive_master', true, function (o, c, m) {
   		var mes=JSON.parse(m);
   		if(mes.message) updateWidget(mes.message)
-  		else if (mes.ping) socket.send('send_master',JSON.stringify({room : _room,msg :{i :'pong'}, uuid:r_uuid}));
+  		else if (mes.ping) {socket.send('send_master',JSON.stringify({room : _room,msg :{i :'pong'}, uuid:r_uuid}));
+  			if(streamOk==true)pubnubEmit("stream","ready");
+  		}
   		else return;
  	 });
   	 socket.subscribe('r_uuid', true, function (o, c, m) {
@@ -44,6 +47,10 @@ socket = RealtimeMessaging.createClient();
  	 });
 
 };
+
+
+
+
 
 function pubnubEmit(r,m){	
 		  	socket.send('send_master',JSON.stringify({room : _room,msg :{i :r,ii :m}, uuid:r_uuid}));

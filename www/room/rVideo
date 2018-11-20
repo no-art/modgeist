@@ -1,0 +1,34 @@
+<style>
+#video-rec{	
+	visibility:hidden;
+	position:absolute;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	width:100%;
+	height:100%;
+
+}
+#myVideo{	
+	position:absolute;
+	top:10%;
+	right:0px;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	width:100%;
+	height:100%;
+	z-index:0;
+
+}
+#video-rec2{	visibility:hidden;}
+</style>
+<script>
+reset();
+logo(0);
+sendId("header","photo");
+document.getElementById("video-rec").style.visibility="visible";
+document.getElementById("myVideo").style.visibility="visible";
+
+document.getElementById("display").style.visibility="visible";
+</script>

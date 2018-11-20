@@ -12,7 +12,7 @@ sendId("header","");
             shakeEvent.stop();
 
             shakeEvent.start();
-            window.addEventListener("shake", funcshake);
+            //window.addEventListener("shake", funcshake);
 
 
             //if(!("ondevicemotion" in window)){alert("Not Supported");}

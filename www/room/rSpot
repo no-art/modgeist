@@ -23,7 +23,7 @@ opacity("nexus2",1);
 //opacity("footer",0);
 draw=true;
 sendId("main","");
-sendId("header","Spots")
+sendId("header","<xmp></spots></xmp>")
 //_tick=1000;
 //stopMouseT2('cpos');
 //startMouseT2('cpos');

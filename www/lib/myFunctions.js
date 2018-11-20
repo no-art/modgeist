@@ -223,6 +223,8 @@ document.getElementById("nexus2").style.visibility="hidden";
 document.getElementById("nexus3").style.visibility="hidden";
 document.getElementById("messages").style.visibility="hidden";
 document.getElementById("chat").style.visibility="hidden";
+document.getElementById("video-rec").style.visibility="hidden";
+document.getElementById("myVideo").style.visibility="hidden";
 document.getElementById("display").style.visibility="visible";
 draw=false;
 window.removeEventListener("resize", myFunction);

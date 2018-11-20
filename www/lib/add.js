@@ -36,7 +36,7 @@ socket = RealtimeMessaging.createClient();
   	socket.subscribe('receive_master', true, function (o, c, m) {
   		var mes=JSON.parse(m);
   		if(mes.message) updateWidget(mes.message)
-  		else if (mes.ping) {socket.send('send_master',JSON.stringify({room : _room,msg :{i :'pong'}, uuid:r_uuid}));
+  		else if (mes.ping) {socket.send('send_master',JSON.stringify({room : _room,msg :{i :'pong',ii : 'ok'}, uuid:r_uuid}));
   			if(streamOk==true)pubnubEmit("stream","ready");
   		}
   		else return;

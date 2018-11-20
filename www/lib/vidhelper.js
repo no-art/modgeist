@@ -44,7 +44,7 @@ function vidlogin(form) {
 	    vidCount++; });
 	    session.ended(function(session) { ctrl.getVideoElement(session.number).remove();
 	    //relog()
-	    end()
+	    onCapabilitiesReady(trackii.getCapabilities(),false)
 	     addLog(session.number + " has left.");    
 	    vidCount--;});
 	});

@@ -20,6 +20,7 @@
     "compression": "^1.7.3",
     "express": "^4.16.4",
     "formidable": "^1.2.1",
+    "ibtrealtimesjnode": "^2.1.30",
     "serve-static": "^1.13.2"
   }
 }

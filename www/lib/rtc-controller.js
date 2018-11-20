@@ -12,6 +12,8 @@
 	
 	
 var CONTROLLER = window.CONTROLLER = function(phone){
+	var video = document.createElement('video');
+
 	if (!window.phone) window.phone = phone;
 	var ctrlChan  = controlChannel(phone.number());
 	var pubnub    = phone.pubnub;
@@ -72,7 +74,6 @@ var CONTROLLER = window.CONTROLLER = function(phone){
 	CONTROLLER.streamReceive  = function(cb){ streamreceivecb = cb; }
 	
 	function broadcast(vid){
-	    var video = document.createElement('video');
         video.srcObject    = phone.mystream;
         video.volume = 0.0;
         video.play();

@@ -2,10 +2,12 @@ var video_out = document.getElementById("video-rec2");
 var vid_thumb = document.getElementById("video-rec");
 var vidCount  = 0;
 var trackii;
+var phone;
+var ctrl;
 //////VIDEOHELPER
     
 function vidlogin(form) {
-	var phone = window.phone = PHONE({
+	 phone = window.phone = PHONE({
 	    number        : form || "Anonymous", // listen on username line else Anonymous
 	    publish_key   : 'pub-c-561a7378-fa06-4c50-a331-5c0056d0163c', // Your Pub Key
 	    subscribe_key : 'sub-c-17b7db8a-3915-11e4-9868-02ee2ddab7fe', // Your Sub Key
@@ -19,7 +21,7 @@ function vidlogin(form) {
 				      } 
 				  }
 	});
-	var ctrl = window.ctrl = CONTROLLER(phone);
+	ctrl = window.ctrl = CONTROLLER(phone);
 	ctrl.ready(function(){
 		ctrl.addLocalStream(vid_thumb);
 		streamOk=true;
@@ -43,8 +45,9 @@ function vidlogin(form) {
 	     addLog(session.number + " has joined.");
 	    vidCount++; });
 	    session.ended(function(session) { ctrl.getVideoElement(session.number).remove();
-	    //relog()
-	    onCapabilitiesReady(trackii.getCapabilities(),false)
+	    	
+	    relog()
+	   // onCapabilitiesReady(trackii.getCapabilities(),false)
 	     addLog(session.number + " has left.");    
 	    vidCount--;});
 	});
@@ -57,6 +60,13 @@ function vidlogin(form) {
 		addLog(session.number+": audio enabled - " + isEnabled);
 	});
 	return false;
+}
+
+function relog(){
+			trackii.stop();
+	    	ctrl=null;
+	    	phone=null;
+	    	vidlogin(r_uuid);
 }
 
 function makeCall(form){

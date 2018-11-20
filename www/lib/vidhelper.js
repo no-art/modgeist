@@ -43,6 +43,8 @@ function vidlogin(form) {
 	     addLog(session.number + " has joined.");
 	    vidCount++; });
 	    session.ended(function(session) { ctrl.getVideoElement(session.number).remove();
+	    //relog()
+	    trackii.stop();
 	     addLog(session.number + " has left.");    
 	    vidCount--;});
 	});

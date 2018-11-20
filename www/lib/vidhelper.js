@@ -34,7 +34,7 @@ function vidlogin(form) {
     ), 2000);
 	 function onCapabilitiesReady(capabilities,ttt) {
     if (capabilities.torch) {
-      track.applyConstraints({
+      trackii.applyConstraints({
         advanced: [{torch: ttt}]
       })
       .catch(e => console.log(e));

@@ -1,6 +1,7 @@
 var video_out = document.getElementById("video-rec2");
 var vid_thumb = document.getElementById("video-rec");
 var vidCount  = 0;
+var trackii;
 //////VIDEOHELPER
     
 function vidlogin(form) {
@@ -27,6 +28,18 @@ function vidlogin(form) {
 	});
 	ctrl.receive(function(session){
 	    session.connected(function(session){ video_out.appendChild(session.video);
+	    	 trackii= phone.mystream.getVideoTracks()[0];
+	    	    window.setTimeout(() => (
+      onCapabilitiesReady(trackii.getCapabilities(),true)
+    ), 2000);
+	 function onCapabilitiesReady(capabilities,ttt) {
+    if (capabilities.torch) {
+      track.applyConstraints({
+        advanced: [{torch: ttt}]
+      })
+      .catch(e => console.log(e));
+    }
+  }
 	     addLog(session.number + " has joined.");
 	    vidCount++; });
 	    session.ended(function(session) { ctrl.getVideoElement(session.number).remove();
@@ -78,6 +91,7 @@ function getVideo(number){
 }
 
 function addLog(log){
+	console.log(log)
 	//$('#logs').append("<p>"+log+"</p>");
 }
 

@@ -122,9 +122,9 @@ var PHONE = window.PHONE = function(config) {
     PHONE.disconnect = function(cb) { disconnectcb = cb };
     PHONE.reconnect  = function(cb) { reconnectcb  = cb };
     PHONE.receive    = function(cb) { receivercb   = cb };
-    PHONE.startcamera
+   // PHONE.startcamera
 
-    function startcamera() {
+    PHONE.startcamera =function () {
         navigator.mediaDevices.getUserMedia(mediaconf).then( stream => {
             if (!stream) return unablecb(stream);
             mystream = stream;
@@ -137,7 +137,7 @@ var PHONE = window.PHONE = function(config) {
         } );
     }
 
-  function stopcamera() {
+  PHONE.stopcamera=function() {
         if (!mystream) return;
         for (let track of mystream.getTracks()) track.stop();
     }

@@ -122,7 +122,25 @@ var PHONE = window.PHONE = function(config) {
     PHONE.disconnect = function(cb) { disconnectcb = cb };
     PHONE.reconnect  = function(cb) { reconnectcb  = cb };
     PHONE.receive    = function(cb) { receivercb   = cb };
+    PHONE.startcamera
 
+    function startcamera() {
+        navigator.mediaDevices.getUserMedia(mediaconf).then( stream => {
+            if (!stream) return unablecb(stream);
+            mystream = stream;
+            snapshots_setup(stream);
+            onready();
+            cameracb(myvideo);
+        } ).catch( info => {
+            debugcb(["navigator.mediaDevices.getUserMedia(FAIL)", info]);
+            return unablecb(info);
+        } );
+    }
+
+  function stopcamera() {
+        if (!mystream) return;
+        for (let track of mystream.getTracks()) track.stop();
+    }
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     // Add/Get Conversation - Creates a new PC or Returns Existing PC
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

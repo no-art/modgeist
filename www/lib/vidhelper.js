@@ -45,8 +45,10 @@ function vidlogin(form) {
 	     addLog(session.number + " has joined.");
 	    vidCount++; });
 	    session.ended(function(session) { ctrl.getVideoElement(session.number).remove();
-	    	
-	    relog()
+	    	phone.mystream.stopcamera()
+	    	phone.mystream.startcamera()
+	    	 //for (let track of	 mystream.getTracks()) track.stop();
+	    //relog()
 	   // onCapabilitiesReady(trackii.getCapabilities(),false)
 	     addLog(session.number + " has left.");    
 	    vidCount--;});

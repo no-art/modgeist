@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="lib/jqueryProgress.min.css">
+		 	<script type="text/javascript" src="lib/nexusui.min.js"></script> 
+
 	<!--<link rel="stylesheet" type="text/css" href="css/upload.css">-->
 
 	<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
@@ -33,7 +35,8 @@
 	 	<script type="text/javascript" src="lib/jquery.mobile.custom.min.js"></script>
 	 	<script type="text/javascript" src="lib/img_resize.js"></script>
 	 	<script type="text/javascript" src="lib/howler.min.js"></script>
-	 	 <script type="text/javascript" src="lib/sound.js"></script>
+	 	<script type="text/javascript" src="lib/sound.js"></script>
+
 </head>
 
 <body onclick="fbody()" onload="bodyload()">
@@ -99,7 +102,7 @@
 //	noSleep.enable();
 	var draw=false;
 	var _tick=50;
-	var room=['rSpot','rUpresize','rChat','button','shaker','rBgLight','rBgBlack','simple','rVideo'];	
+	var room=['vvanity','rSpot','rUpresize','rChat','button','shaker','rBgLight','rBgBlack','simple','rVideo'];	
 	function tick(i){
 	i=Math.max(i, 80);
 	_tick=i;
@@ -121,8 +124,8 @@ $(function(){
 	toggleButton('b2',"#444","#ACACAC");
 	attrib('cpos');
 	start('cpos');
-		vidlogin(r_uuid);
-	//joinRoom('simple');
+	//	vidlogin(r_uuid);
+	joinRoom('vvanity');
 
 
 </script>

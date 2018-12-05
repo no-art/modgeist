@@ -34,26 +34,34 @@
 
 .gallery {
  width: 100%;
- height: 100%;
+ height: 60%;
+ padding:0px;margin :00px;
+ border:0px;
 }
 .item {
-  width: 50%;
+  width: 25vh;
+  padding:0px;margin :00px;
+ border:0px;
 }
 }
 @media (orientation:portrait){
      .item {
-  width: 30vh;
+  width: 25vh;
+  padding:0px;margin :0px;
+ border:0px;
 }
 
 }
 @media (orientation:landscape){
      .item {
-  width: 30vw;
+  width: 25vw;
+    padding:0px;margin :00px;
+ border:0px;
      }
 }
 </style>
 
-   <div id="log" style="width:100%;text-align:center">My Super Game</div>
+   
     <div class="gallery">
   <div class="item" onclick="vanity(1)">
     <img src="img/_vanity/1.jpeg">
@@ -73,11 +81,11 @@
 </div>
  
     <div id="Rb1" style="width:100%;height:100px;float:left;margin:0px 0px 0px 0px;"></div>
-          <div id="Slider1" style="width:100%;height:50px;float:left;margin:00px 0px 0px 0px;"></div>
-           <div id="progress" style="width:100%;height:30px;float:left;margin:00px 0px 0px 0px;">
-          <div id="progress2" style="width:0%;height:30px;float:left;margin:00px 0px 0px 0px;background-color:red">
+        <div id="Slider1" style="width:90%;height:50px;margin-left:auto;margin-right:auto;"></div> 
+           
            </div>
 <script>
+  sendId("header","<div id='progress' style='position:absolute;width:100%;float:left;margin:0px;'><div id='progress2' style='position:absolute;width:0%;float:left;margin:0;background-color:red'></div></div><div id='_log' style='position:absolute;width:100%;text-align:center;margin:0px'>My Super Game</div>");
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
                               window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
           var ID=1;
@@ -89,11 +97,11 @@
   'active': -1})
       _Rb.on('change',function(v) {
                ID=v;
-               document.getElementById("log").innerHTML='ID : '+v;
+               document.getElementById("_log").innerHTML='ID : '+v;
           })
           slider.on('change',function(v){
                _time=v;
-               document.getElementById("log").innerHTML='Time : '+parseInt(v,10);
+               document.getElementById("_log").innerHTML='Time : '+parseInt(v,10);
 
           })
 
@@ -106,12 +114,12 @@
                    function frame() {
                          progressPercent=parseInt(100-((progressTimeEnd-Date.now())/t)*100,10);
                        if (progressPercent >= 100) {
-                         elem.innerHTML = 0  + '%';
+                         elem.innerHTML = "";
                            elem.style.width = 0 + '%';
                        } else {
                           // width++;
                           requestAnimationFrame(frame);
-                          elem.innerHTML = progressPercent  + '%';
+                          elem.innerHTML = ".";
                            elem.style.width = progressPercent + '%';
        }
     }

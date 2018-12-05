@@ -5,17 +5,18 @@
 <head>
 	<meta charset='utf-8' />
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-	<title>Narcissus _Reflected</title>
+	<title>no-art</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="lib/jqueryProgress.min.css">
-		 	<script type="text/javascript" src="lib/nexusui.min.js"></script> 
+	<script type="text/javascript" src="lib/nexusui.min.js"></script> 
 
 	<!--<link rel="stylesheet" type="text/css" href="css/upload.css">-->
 
 	<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+	<script src="lib/fastclick.min.js"></script>
 		<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
 		<script src="lib/webrtc.js"></script>
 	 <script src="https://messaging-public.realtime.co/js/2.1.0/ortc.js"></script>
@@ -119,13 +120,18 @@ $(function(){
    changeRoom(0);
   }
 });
-	function bodyload(){;}
+	function bodyload(){
+		window.addEventListener('load', function() {
+    new FastClick(document.body);
+	}, false);
 	startMouseT('cpos');
 	toggleButton('b2',"#444","#ACACAC");
 	attrib('cpos');
 	start('cpos');
-	//	vidlogin(r_uuid);
+	vidlogin(r_uuid);
 	joinRoom('vvanity');
+		;}
+	
 
 
 </script>

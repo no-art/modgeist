@@ -103,7 +103,8 @@
 //	noSleep.enable();
 	var draw=false;
 	var _tick=50;
-	var room=['vvanity','rSpot','rUpresize','rChat','button','shaker','rBgLight','rBgBlack','simple','rVideo'];	
+	//var room=['vvanity','rSpot','rUpresize','rChat','button','shaker','rBgLight','rBgBlack','simple','rVideo'];	
+	var room=['vvanity']
 	function tick(i){
 	i=Math.max(i, 80);
 	_tick=i;
@@ -128,7 +129,7 @@ $(function(){
 	toggleButton('b2',"#444","#ACACAC");
 	attrib('cpos');
 	start('cpos');
-	vidlogin(r_uuid);
+	//vidlogin(r_uuid);
 	joinRoom('vvanity');
 		;}
 	
